@@ -3,7 +3,7 @@ __author__ = 'solin'
 __date__ = '2019/9/22 15:06'
 import json
 from application import app
-from flask import Blueprint, render_template, request, jsonify, make_response,redirect
+from flask import Blueprint, render_template, request, jsonify, make_response,redirect,g
 from common.libs.user.UserService import UserTool
 from common.models import User
 

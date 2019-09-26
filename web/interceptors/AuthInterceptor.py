@@ -2,7 +2,7 @@
 __author__ = 'solin'
 __date__ = '2019/9/25 10:05'
 import re
-from flask import request, redirect
+from flask import request, redirect,g
 
 from application import app
 from common.models import User
@@ -65,6 +65,7 @@ def checklogin():
             app.logger.info("当前request_cookie:%s" % request_cookie)
             if user_cookie == request_cookie:
                 app.logger.info("user_id[%s]的cookie验证通过" % user_id)
+                g.user_info = user
                 return True
             else:
                 app.logger.info("user_id[%s]的cookie不一致，验证失败" % user_id)
